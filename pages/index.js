@@ -1,13 +1,29 @@
 import Layout from '../components/Layout';
 import Navbar from '../components/Navbar';
+import LandingText from '../components/LandingText';
+import CardHolder from '../components/CardHolder';
 
-export default function App() {
+export default function App(props) {
+    console.log("Props are", props)
     return (
         <div>
             <Navbar />
             <Layout>
-                <h1>My App</h1>
+                <LandingText />
+                <CardHolder holderName="Latest Blogs" {...props} />
             </Layout>
         </div>
     )
+}
+
+
+export async function getServerSideProps() {
+    const res = await fetch('http://localhost:3001/blogs');
+    const blogs = await res.json();
+
+    return {
+        props: {
+            blogs: blogs.Blogs
+        }
+    }
 }

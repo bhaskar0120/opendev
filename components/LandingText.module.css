@@ -1,0 +1,30 @@
+.container{
+    display : flex;
+    flex-direction: row;
+    gap: 1rem;
+    user-select: none;
+}
+.anim-container{
+    overflow: hidden;
+    height: 5rem;
+}
+.moving-box{
+    animation: move 3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+@keyframes move{
+    0%{
+        transform: translate(0,5rem);
+    }
+    20%{
+        transform: translate(0,0);
+    }
+    90%{
+        transform: translate(0,0);
+    }
+    100%{
+        transform: translate(0,-4rem);
+    }
+}

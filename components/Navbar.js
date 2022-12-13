@@ -1,4 +1,4 @@
-import { Link, Text, Navbar, Button } from '@nextui-org/react';
+import { Link, Text, Navbar } from '@nextui-org/react';
 
 export default function App() {
     let collapseItems = ["Home", "Courses", "About me"]
@@ -17,7 +17,6 @@ export default function App() {
             </Navbar.Content>
             <Navbar.Content gap={10} activeColor={"primary"} variant={"highlight-solid"}>
                 <Navbar.Link isActive href="#"><Text size="$xl">Login</Text></Navbar.Link>
-                <Button auto color={"neutral"}>Sign Up</Button>
             </Navbar.Content>
             <Navbar.Collapse>
                 {collapseItems.map((item, index) => (
