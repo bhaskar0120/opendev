@@ -1,0 +1,69 @@
+.markdown *{
+    margin-top: 2vh;
+}
+
+.markdown div{
+    width: 50%;
+    margin : 0 auto;
+    box-shadow: #1e1e1e86 1px 1px 10px;
+}
+
+.markdown span::selection{
+    color: black;
+}
+
+.markdown p {
+    font-size: large;
+    color : #1e1e1e;
+}
+
+.markdown code{
+    background-color: transparent;
+    padding: 0;
+    font-size: large;
+}
+
+.markdown input[type="checkbox"]{
+    width: 1.5rem;
+    height: 1.5rem;
+    margin: 0 .5rem;
+    transform: translateY(0.4rem);
+}
+
+.markdown li{
+    margin-top: 0;
+    line-height: 1rem;
+}
+
+.markdown ul{
+    list-style: disc;
+    padding-left: 2rem;
+}
+
+.markdown ol{
+    padding-left: 2rem;
+}
+
+
+.markdown blockquote{
+    border-left: 8px solid #2e2e2e;
+    border-radius: 0;
+}
+
+.markdown table{
+    width: 100%;
+    border-collapse: collapse;
+}
+.markdown thead{
+    background-color: #2e2e2e;
+    color: white;
+    font-size: larger;
+
+}
+.markdown td{
+    border-right: 1px solid #2e2e2e;
+    padding: 0.5rem;
+}
+.markdown tr:nth-child(even){
+    background-color: #ddd;
+}
