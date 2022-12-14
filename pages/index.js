@@ -18,7 +18,7 @@ export default function App(props) {
 
 
 export async function getServerSideProps() {
-    const res = await fetch('http://localhost:3001/blogs');
+    const res = await fetch('http://localhost:3000/api/all');
     const blogs = await res.json();
 
     return {
