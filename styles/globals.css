@@ -1,26 +1,101 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
+@media screen {
+  /* string content */
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+  .str {
+    color: #99cc99;
   }
-  body {
-    color: white;
-    background: black;
+
+  /* keyword */
+
+  .kwd {
+    color: #cc99cc;
   }
+
+  /* comment */
+
+  .com {
+    color: #999999;
+  }
+
+  /* type name */
+
+  .typ {
+    color: #6699cc;
+  }
+
+  /* literal value */
+
+  .lit {
+    color: #f99157;
+  }
+
+  /* punctuation */
+
+  .pun {
+    color: #cccccc;
+  }
+
+  /* lisp open bracket */
+
+  .opn {
+    color: #cccccc;
+  }
+
+  /* lisp close bracket */
+
+  .clo {
+    color: #cccccc;
+  }
+
+  /* markup tag name */
+
+  .tag {
+    color: #f2777a;
+  }
+
+  /* markup attribute name */
+
+  .atn {
+    color: #f99157;
+  }
+
+  /* markup attribute value */
+
+  .atv {
+    color: #66cccc;
+  }
+
+  /* declaration */
+
+  .dec {
+    color: #f99157;
+  }
+
+  /* variable name */
+
+  .var {
+    color: #f2777a;
+  }
+
+  /* function name */
+
+  .fun {
+    color: #6699cc;
+  }
+}
+
+/* Inline code */
+
+.inline-code{
+  background-color: #2d2d2d;
+  padding : 0.2rem 0.5rem;
+  border-radius: 5px;
+  box-shadow: #2d2d2db0 1px 1px 10px;
+  margin: 5px;
+}
+
+.code-block{
+    background-color: #2d2d2d;
+    padding: 2%;
+    border-radius: 10px;
 }
