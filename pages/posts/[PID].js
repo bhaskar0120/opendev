@@ -47,7 +47,7 @@ export async function getServerSideProps() {
         },
     }
 
-    let raw = await fetch('http://localhost:3000/api/example')
+    let raw = await fetch('https://opendev.vercel.app/api/example')
     let data = await raw.json()
     let markdown = data.blog
 

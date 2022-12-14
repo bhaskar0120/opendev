@@ -13,7 +13,7 @@ export default function App(props) {
 
 
 export async function getServerSideProps() {
-    const res = await fetch('http://localhost:3000/api/all');
+    const res = await fetch('https://opendev.vercel.app/api/all');
     const blogs = await res.json();
 
     return {
