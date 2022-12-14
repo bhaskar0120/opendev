@@ -1,9 +1,14 @@
 import { Text, Card, Button } from "@nextui-org/react";
+import Link from "next/link";
+import { useState } from "react";
 
 export default function App(props) {
+    const [onCard, setOnCard] = useState(false);
 
     return (
-        <Card variant="bordered" isHoverable isPressable >
+        <Card variant="bordered" isHoverable
+            onMouseEnter={() => setOnCard(true)}
+            onMouseLeave={() => setOnCard(false)}>
             <Card.Header>
                 <Text h3>{props.title}</Text>
             </Card.Header>
@@ -18,7 +23,7 @@ export default function App(props) {
                     justifyContent: "space-between",
                 }}>
                     <Text color="$gray600">{props.author}</Text>
-                    <Button color={"primary"} auto>Read More</Button>
+                    <Link href={'/posts/example'}><Button shadow={onCard} color={"primary"} auto>Read More</Button></Link>
                 </div>
             </Card.Footer>
         </Card>
