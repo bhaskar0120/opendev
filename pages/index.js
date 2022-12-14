@@ -3,7 +3,6 @@ import LandingText from '../components/LandingText';
 import CardHolder from '../components/CardHolder';
 
 export default function App(props) {
-    console.log("Props are", props)
     return (
         <Layout>
             <LandingText />
