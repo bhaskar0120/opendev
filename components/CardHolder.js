@@ -9,7 +9,7 @@ function App(props) {
             <Grid.Container gap={3}>
                 {props.blogs.map((blog) => {
                     return (
-                        <Grid xs={4}>
+                        <Grid md={6} xs={12} lg={4}>
                             <BlogCard {...blog} />
                         </Grid>
                     )

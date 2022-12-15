@@ -1,6 +1,15 @@
+@media screen and (max-width:1080px) {
+    .container{
+        flex-direction: column;
+    }
+}
+@media screen and (min-width:1080px) {
+    .container{
+        flex-direction: row;
+    }
+}
 .container{
     display : flex;
-    flex-direction: row;
     gap: 1rem;
     user-select: none;
 }
