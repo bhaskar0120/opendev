@@ -1,4 +1,4 @@
-import { Link, Text, Navbar } from '@nextui-org/react';
+import { Link, Text, Navbar, Popover } from '@nextui-org/react';
 import { useRouter } from 'next/router';
 
 export default function App() {
@@ -24,7 +24,14 @@ export default function App() {
                 <Navbar.Link href="/" isActive={router.pathname === '/about'}>About me</Navbar.Link>
             </Navbar.Content>
             <Navbar.Content gap={10} activeColor={"primary"} variant={"highlight-solid"}>
-                <Navbar.Link isActive href="#"><Text size="$xl">Login</Text></Navbar.Link>
+                <Popover>
+                    <Popover.Trigger>
+                        <Navbar.Link isActive ><Text size="$xl">Login</Text></Navbar.Link>
+                    </Popover.Trigger>
+                    <Popover.Content css={{ p: '$10' }}>
+                        This Feature will be added soon!
+                    </Popover.Content>
+                </Popover>
             </Navbar.Content>
             <Navbar.Collapse>
                 {collapseItems.map((item, index) => (
