@@ -1,9 +1,5 @@
 export default function app(req, res) {
-    let [from, to] = req.query.pages;
-    from = parseInt(from);
-    to = parseInt(to);
     const blogs = [
-        // 20 blogs
         { "title": "Basics of Python", "author": "John Doe", "content": "Python is a great language" },
         { "title": "Basics of Java", "author": "John Doe", "content": "Java is a great language" },
         { "title": "Basics of C++", "author": "John Doe", "content": "C++ is a great language" },
@@ -23,8 +19,8 @@ export default function app(req, res) {
         { "title": "Basics of Perl", "author": "John Doe", "content": "Perl is a great language" },
         { "title": "Basics of Elixir", "author": "John Doe", "content": "Elixir is a great language" }
     ];
-    const min = (a, b) => a < b ? a : b;
     res.status(200).json({
-        "blogs": blogs.slice(from, min(to, blogs.length))
+        total: blogs.length,
+        blogs: blogs
     });
 }
