@@ -1,9 +1,10 @@
 import { Text, Grid, } from "@nextui-org/react"
 import BlogCard from "./BlogCard"
+import style from '../styles/CardHolder.module.css'
 
 function App(props) {
     return (
-        <div>
+        <div className={style.container}>
             <Text h1>{props.holderName}</Text>
             <Grid.Container gap={3}>
                 {props.blogs.map((blog) => {
