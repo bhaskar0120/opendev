@@ -1,0 +1,13 @@
+.container-small{
+    position: relative;
+    border-radius: 4rem 4rem 0 0 ;
+    width: 100%;
+    margin : 0 auto;
+    background-color: white;
+    bottom: 4rem;
+    padding: 2rem 1rem 0 1rem;
+    background-image: linear-gradient(to bottom right, #9999ff 33%, white 33%);
+}
+.center{
+    margin-top: 10vh;
+}

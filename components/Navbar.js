@@ -21,7 +21,7 @@ export default function App() {
             <Navbar.Content hideIn={"md"} activeColor={"primary"} variant={"highlight-solid-rounded"}>
                 <Navbar.Link href="/" isActive={router.pathname === '/'}>Home</Navbar.Link>
                 <Navbar.Link href="/posts/example" isActive={router.pathname === '/posts/[PID]'}>Courses</Navbar.Link>
-                <Navbar.Link href="/" isActive={router.pathname === '/about'}>About me</Navbar.Link>
+                <Navbar.Link href="/about" isActive={router.pathname === '/about'}>About me</Navbar.Link>
             </Navbar.Content>
             <Navbar.Content gap={10} activeColor={"primary"} variant={"highlight-solid"}>
                 <Popover>
