@@ -5,7 +5,7 @@ export default function App() {
     let collapseItems = [
         { name: "Home", url: '/' },
         { name: "Courses", url: '/posts/example' },
-        { name: "About me", url: "/" }]
+        { name: "About me", url: "/about" }]
     const router = useRouter();
 
     return (
