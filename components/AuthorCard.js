@@ -1,20 +1,17 @@
-import { Image, Container, Card, Text } from '@nextui-org/react';
+import { Image, Avatar, Spacer, Card, Text } from '@nextui-org/react';
 import style from '../styles/AuthorCard.module.css';
 
-export default function App() {
-    const props = {
-        headerImgSrc: 'https://picsum.photos/1000/200',
-        imgSrc: 'https://avatars.githubusercontent.com/u/51149947?v=4',
-        authorName: 'John Doe'
-    }
+export default function App(props) {
     return (
         <Card variant="shadow" >
-            <Image src={props.headerImgSrc} width={"100%"} height={"20vh"} objectFit="cover" />
+            <Image src={props.backgroundImg} width={"100%"} height={"20vh"} objectFit="cover" />
             <Card.Footer>
-                <img src={props.imgSrc} className={style['author-img']} />
+
+                <Avatar src={props.authorImg} size={'xl'} />
+                <Spacer></Spacer>
                 <div className={style.container}>
-                    <Text h3>{props.authorName}</Text>
-                    <Text color='$gray700'>12 Dec. 2022</Text>
+                    <Text h3>{props.author}</Text>
+                    <Text color='$gray700'>{props.date}</Text>
                 </div>
             </Card.Footer>
             {/* Random image */}

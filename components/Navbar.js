@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 export default function App() {
     let collapseItems = [
         { name: "Home", url: '/' },
-        { name: "Courses", url: '/posts/example' },
+        //{ name: "Courses", url: '/posts/example' },
         { name: "About me", url: "/about" }]
     const router = useRouter();
 
@@ -19,8 +19,8 @@ export default function App() {
                 </Link>
             </Navbar.Brand>
             <Navbar.Content hideIn={"md"} activeColor={"primary"} variant={"highlight-solid-rounded"}>
-                <Navbar.Link href="/" isActive={router.pathname === '/'}>Home</Navbar.Link>
-                <Navbar.Link href="/posts/example" isActive={router.pathname === '/posts/[PID]'}>Courses</Navbar.Link>
+                <Navbar.Link href="/" isActive={router.pathname === '/' || router.pathname === '/posts/[PID]'}>Home</Navbar.Link>
+                {/*<Navbar.Link href="" isActive={router.pathname === '/posts/[PID]'}>Courses</Navbar.Link>*/}
                 <Navbar.Link href="/about" isActive={router.pathname === '/about'}>About me</Navbar.Link>
             </Navbar.Content>
             <Navbar.Content gap={10} activeColor={"primary"} variant={"highlight-solid"}>

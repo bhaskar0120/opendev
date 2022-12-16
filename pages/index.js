@@ -11,17 +11,18 @@ export default function App(props) {
         <Layout>
             <LandingText />
             <CardHolder holderName="Latest Blogs" blogs={props.blogs.slice((page - 1) * contentPerPage, page * contentPerPage)} />
-            <Pagination total={Math.ceil(props.total / contentPerPage)} initialPage={page} shadow onChange={(p) => setPage(p)} />
+            {(Math.ceil(props.total / contentPerPage) > 1) ?
+                <Pagination total={Math.ceil(props.total / contentPerPage)} initialPage={page} shadow onChange={(p) => setPage(p)} />
+                : null}
         </Layout>
     )
 }
 
 
 export async function getServerSideProps() {
-    const blogs = await (await fetch('http://opendev.vercel.app/api/all')).json();
-
+    const blogs = await (await fetch('https://raw.githack.com/bhaskar0120/makeshift-blogs/main/all.json')).json();
 
     return {
-        props: { blogs: blogs.blogs, total: blogs.total }
+        props: { blogs: blogs.blogs, total: blogs.blogs.length }
     }
 }

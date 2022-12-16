@@ -9,12 +9,10 @@ import { Card } from '@nextui-org/react';
 
 
 export default function App(props) {
-    const router = useRouter();
-    const PID = router.query.PID
 
     return (
         <Layout>
-            <AuthorCard />
+            <AuthorCard {...props} />
             <Card css={{ marginTop: '1vh', padding: '$10' }}>
             <div className={Style.markdown} dangerouslySetInnerHTML={{ __html: (props.data) }} />
             <Script onLoad={() => PR.prettyPrint()} src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.js" />
@@ -23,7 +21,9 @@ export default function App(props) {
     )
 }
 
-export async function getServerSideProps() {
+export async function getServerSideProps(context) {
+    const PID = context.query.PID
+
     const render = {
         code(string) {
             return `
@@ -52,7 +52,13 @@ export async function getServerSideProps() {
         },
     }
 
-    let data = await (await (fetch('http://opendev.vercel.app/api/example'))).json()
+    const response = await fetch(`https://opendev.vercel.app/api/${PID}`)
+    if (response.status == 404) {
+        return {
+            notFound: true
+        }
+    }
+    let data = await response.json()
     let markdown = data.blog
 
     marked.use({ renderer: render });
@@ -61,6 +67,10 @@ export async function getServerSideProps() {
     return {
         props: {
             data: DOMPurify.sanitize(marked(markdown)),
+            author: data.author,
+            date: data.date,
+            authorImg: data.authorImg,
+            backgroundImg: data.backgroundImg,
         }
     }
 

@@ -23,7 +23,7 @@ export default function App(props) {
                     justifyContent: "space-between",
                 }}>
                     <Text color="$gray600">{props.author}</Text>
-                    <Link href={'/posts/example'}><Button shadow={onCard} color={"primary"} auto>Read More</Button></Link>
+                    <Link href={`/posts/${props.id}`}><Button shadow={onCard} color={"primary"} auto>Read More</Button></Link>
                 </div>
             </Card.Footer>
         </Card>
