@@ -1,5 +1,5 @@
 import { Text } from "@nextui-org/react"
-import style from './LandingText.module.css'
+import style from '../styles/LandingText.module.css'
 import { useState, useRef } from "react";
 
 export default function App() {
