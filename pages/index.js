@@ -3,12 +3,16 @@ import LandingText from '../components/LandingText';
 import CardHolder from '../components/CardHolder';
 import { Pagination } from '@nextui-org/react';
 import { useState } from 'react';
+import Head from 'next/head';
 
 export default function App(props) {
     const [page, setPage] = useState(1);
     const contentPerPage = 6;
     return (
         <Layout>
+            <Head>
+                <title>OpenDev - Computer Development made simple</title>
+            </Head>
             <LandingText />
             <CardHolder holderName="Latest Blogs" blogs={props.blogs.slice((page - 1) * contentPerPage, page * contentPerPage)} />
             {(Math.ceil(props.total / contentPerPage) > 1) ?

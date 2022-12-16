@@ -5,12 +5,16 @@ import AuthorCard from '../../components/AuthorCard';
 import Style from '../../styles/Post.module.css';
 import Script from 'next/script';
 import { Card } from '@nextui-org/react';
+import Head from 'next/head';
 
 
 export default function App(props) {
-
     return (
         <Layout>
+            <Head>
+                <title>OpenDev - {props.title}</title>
+                <meta name="description" content={props.description} />
+            </Head>
             <AuthorCard {...props} />
             <Card css={{ marginTop: '1vh', padding: '$10' }}>
             <div className={Style.markdown} dangerouslySetInnerHTML={{ __html: (props.data) }} />
@@ -55,10 +59,12 @@ export async function getServerSideProps(context) {
 
     const list = await (await fetch(`https://raw.githack.com/bhaskar0120/makeshift-blogs/main/all.json`)).json()
 
+    let meta;
     let flag = false
     for (let key in list.blogs) {
         if (list.blogs[key].id == PID) {
             flag = true;
+            meta = list.blogs[key]
             break;
         }
     }
@@ -81,6 +87,8 @@ export async function getServerSideProps(context) {
             author: data.author,
             date: data.date,
             authorImg: data.authorImg,
+            title: meta.title,
+            description: meta.content,
             backgroundImg: data.backgroundImg,
         }
     }
