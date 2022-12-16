@@ -51,13 +51,25 @@ export async function getServerSideProps(context) {
         },
     }
 
-    const response = await fetch(`https://opendev.vercel.app/api/${PID}`)
-    if (response.status == 404) {
+    //const response = await fetch(`https://opendev.vercel.app/api/${PID}`)
+
+    const list = await (await fetch(`https://raw.githack.com/bhaskar0120/makeshift-blogs/main/all.json`)).json()
+
+    let flag = false
+    for (let key in list.blogs) {
+        if (list.blogs[key].id == PID) {
+            flag = true;
+            break;
+        }
+    }
+    if (!flag) {
         return {
             notFound: true
         }
     }
-    let data = await response.json()
+
+
+    const data = await (await fetch(`https://raw.githack.com/bhaskar0120/makeshift-blogs/main/blogs/${PID}.json`)).json()
     let markdown = data.blog
 
     marked.use({ renderer: render });
