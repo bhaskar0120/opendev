@@ -1,5 +1,4 @@
 import { marked } from 'marked';
-import { useRouter } from 'next/router';
 import DOMPurify from 'isomorphic-dompurify';
 import Layout from '../../components/Layout';
 import AuthorCard from '../../components/AuthorCard';

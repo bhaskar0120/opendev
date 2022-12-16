@@ -1,7 +1,7 @@
 import Layout from '../components/Layout';
 import LandingText from '../components/LandingText';
 import CardHolder from '../components/CardHolder';
-import { Pagination, Container } from '@nextui-org/react';
+import { Pagination } from '@nextui-org/react';
 import { useState } from 'react';
 
 export default function App(props) {
